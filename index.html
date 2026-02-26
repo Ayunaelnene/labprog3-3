@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>102 Etiquetas HTML (HTML5)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.5; }
+    header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+           }
+    h1 { text-align: center; color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #bdc3c7; padding: 10px; vertical-align: top; }
+    th { background-color: #34495e; color: white; text-align: left; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    tr:hover { background-color: LightBlue; }
+    code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: Consolas, monospace; }
+    .num { width: 60px; text-align: center; font-weight: bold; }
+    .tag  { width: 140px; font-weight: bold; color: #e74c3c; }
+    .desc { width: 35%; }
+    .ejem { width: 35%; }
+    .extra { font-size: 0.92em; color: #555; }
+  </style>
+</head>
+<body>
+<header>
+        <h1>Nelson Arjuna Mendoza</h1>
+        <p>Estudiante de Lic. en Informática</p>
+    </header>
+<h1>102 Etiquetas HTML (estándar HTML5 – 2025/2026)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="num">#</th>
+      <th class="tag">Etiqueta</th>
+      <th class="desc">Descripción</th>
+      <th class="ejem">Ejemplo de uso</th>
+      <th>Notas / Elemento adicional</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="num">1</td>
+      <td class="tag">&lt;!DOCTYPE html&gt;</td>
+      <td>Declara que el documento es HTML5 (obligatorio al inicio)</td>
+      <td><code>&lt;!DOCTYPE html&gt;</code></td>
+      <td>Sin cierre. Activa modo estándares.</td>
+    </tr>
+
+    <tr>
+      <td class="num">2</td>
+      <td class="tag">&lt;!-- --&gt;</td>
+      <td>Comentario (no visible en la página)</td>
+      <td><code>&lt;!-- Nota para desarrolladores --&gt;</code></td>
+      <td>Puede abarcar varias líneas.</td>
+    </tr>
+
+    <tr>
+      <td class="num">3</td>
+      <td class="tag">&lt;a&gt;</td>
+      <td>Hipervínculo / enlace</td>
+      <td><code>&lt;a href="https://ejemplo.com" target="_blank"&gt;Visitar&lt;/a&gt;</code></td>
+      <td>atributos: href, target, rel="noopener noreferrer", download</td>
+    </tr>
+
+    <tr>
+      <td class="num">4</td>
+      <td class="tag">&lt;abbr&gt;</td>
+      <td>Abreviatura o acrónimo</td>
+      <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+      <td>title muestra tooltip (accesibilidad)</td>
+    </tr>
+
+    <tr>
+      <td class="num">5</td>
+      <td class="tag">&lt;address&gt;</td>
+      <td>Información de contacto del autor/propietario</td>
+      <td><code>&lt;address&gt;info@empresa.com&lt;/address&gt;</code></td>
+      <td>Semántico – suele ir en footer</td>
+    </tr>
+
+    <tr>
+      <td class="num">6</td>
+      <td class="tag">&lt;area&gt;</td>
+      <td>Área clickable en mapa de imagen</td>
+      <td><code>&lt;area shape="rect" coords="0,0,100,100" href="zona.html" alt="Zona"&gt;</code></td>
+      <td>Dentro de &lt;map&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">7</td>
+      <td class="tag">&lt;article&gt;</td>
+      <td>Contenido independiente (post, noticia, artículo)</td>
+      <td><code>&lt;article&gt;&lt;h2&gt;Título&lt;/h2&gt;&lt;p&gt;Texto...&lt;/p&gt;&lt;/article&gt;</code></td>
+      <td>HTML5 semántico</td>
+    </tr>
+
+    <tr>
+      <td class="num">8</td>
+      <td class="tag">&lt;aside&gt;</td>
+      <td>Contenido tangencial (sidebar, nota al margen)</td>
+      <td><code>&lt;aside&gt;&lt;h3&gt;Dato curioso&lt;/h3&gt;...&lt;/aside&gt;</code></td>
+      <td>HTML5 semántico</td>
+    </tr>
+
+    <tr>
+      <td class="num">9</td>
+      <td class="tag">&lt;audio&gt;</td>
+      <td>Reproductor de audio</td>
+      <td><code>&lt;audio controls&gt;&lt;source src="cancion.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</code></td>
+      <td>controls, autoplay, loop, muted</td>
+    </tr>
+
+    <tr>
+      <td class="num">10</td>
+      <td class="tag">&lt;b&gt;</td>
+      <td>Texto en negrita (sin énfasis semántico)</td>
+      <td><code>&lt;b&gt;Importante&lt;/b&gt;</code></td>
+      <td>Preferir &lt;strong&gt; para importancia</td>
+    </tr>
+
+        <tr>
+      <td class="num">11</td>
+      <td class="tag">&lt;base&gt;</td>
+      <td>Especifica la URL base para todos los enlaces relativos de la página</td>
+      <td><code>&lt;base href="https://ejemplo.com/"&gt;</code></td>
+      <td>Debe ir dentro de &lt;head&gt;. Solo se permite uno por documento.</td>
+    </tr>
+
+    <tr>
+      <td class="num">12</td>
+      <td class="tag">&lt;bdi&gt;</td>
+      <td>Aísla una porción de texto para que no afecte la direccionalidad del texto circundante</td>
+      <td><code>Usuario &lt;bdi&gt;احمد&lt;/bdi&gt; escribió:&lt;/code&gt;</td>
+      <td>Muy útil en textos con mezcla de LTR y RTL (ej. árabe, hebreo)</td>
+    </tr>
+
+    <tr>
+      <td class="num">13</td>
+      <td class="tag">&lt;bdo&gt;</td>
+      <td>Sobreescribe la dirección del texto (bidirectional override)</td>
+      <td><code>&lt;bdo dir="rtl"&gt;Este texto se lee de derecha a izquierda&lt;/bdo&gt;</code></td>
+      <td>dir puede ser "ltr" o "rtl"</td>
+    </tr>
+
+    <tr>
+      <td class="num">14</td>
+      <td class="tag">&lt;blockquote&gt;</td>
+      <td>Define una cita larga (generalmente con indentación)</td>
+      <td><code>&lt;blockquote cite="https://..."&gt;Texto de la cita...&lt;/blockquote&gt;</code></td>
+      <td>El atributo cite es opcional pero recomendado</td>
+    </tr>
+
+    <tr>
+      <td class="num">15</td>
+      <td class="tag">&lt;body&gt;</td>
+      <td>Contiene todo el contenido visible de la página</td>
+      <td><code>&lt;body&gt; ... todo el contenido visible ... &lt;/body&gt;</code></td>
+      <td>Solo puede haber uno por documento HTML</td>
+    </tr>
+
+    <tr>
+      <td class="num">16</td>
+      <td class="tag">&lt;br&gt;</td>
+      <td>Inserta un salto de línea</td>
+      <td><code>Línea uno&lt;br&gt;Línea dos</code></td>
+      <td>Elemento vacío (sin cierre). No usar para espaciado (mejor CSS)</td>
+    </tr>
+
+    <tr>
+      <td class="num">17</td>
+      <td class="tag">&lt;button&gt;</td>
+      <td>Define un botón clickable</td>
+      <td><code>&lt;button type="submit"&gt;Enviar formulario&lt;/button&gt;</code></td>
+      <td>type puede ser: button, submit, reset</td>
+    </tr>
+
+    <tr>
+      <td class="num">18</td>
+      <td class="tag">&lt;canvas&gt;</td>
+      <td>Área para dibujar gráficos mediante JavaScript</td>
+      <td><code>&lt;canvas id="lienzo" width="400" height="300"&gt;&lt;/canvas&gt;</code></td>
+      <td>Proporciona fallback dentro del tag para navegadores sin soporte</td>
+    </tr>
+
+    <tr>
+      <td class="num">19</td>
+      <td class="tag">&lt;caption&gt;</td>
+      <td>Título o descripción de una tabla</td>
+      <td><code>&lt;table&gt;&lt;caption&gt;Ventas 2025&lt;/caption&gt;...&lt;/table&gt;</code></td>
+      <td>Mejora accesibilidad. Debe ser el primer hijo de &lt;table&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">20</td>
+      <td class="tag">&lt;cite&gt;</td>
+      <td>Indica el título de una obra creativa (libro, película, etc.)</td>
+      <td><code>Según &lt;cite&gt;El Principito&lt;/cite&gt;, ...</code></td>
+      <td>Generalmente se muestra en cursiva</td>
+    </tr>
+
+    <tr>
+      <td class="num">21</td>
+      <td class="tag">&lt;code&gt;</td>
+      <td>Define un fragmento de código de computadora</td>
+      <td><code>&lt;code&gt;console.log("Hola mundo")&lt;/code&gt;</code></td>
+      <td>Suele combinarse con &lt;pre&gt; para bloques</td>
+    </tr>
+
+    <tr>
+      <td class="num">22</td>
+      <td class="tag">&lt;col&gt;</td>
+      <td>Especifica propiedades de una columna en una tabla</td>
+      <td><code>&lt;col span="2" style="background:#f0f0f0"&gt;</code></td>
+      <td>Va dentro de &lt;colgroup&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">23</td>
+      <td class="tag">&lt;colgroup&gt;</td>
+      <td>Agrupa columnas de una tabla para darles estilos comunes</td>
+      <td><code>&lt;colgroup&gt;&lt;col&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;</code></td>
+      <td>span define cuántas columnas afecta</td>
+    </tr>
+
+    <tr>
+      <td class="num">24</td>
+      <td class="tag">&lt;data&gt;</td>
+      <td>Vincula un contenido legible con un valor máquina-legible</td>
+      <td><code>&lt;data value="978-3-16-148410-0"&gt;ISBN 978-3-16-148410-0&lt;/data&gt;</code></td>
+      <td>Útil para scripts y microdatos</td>
+    </tr>
+
+    <tr>
+      <td class="num">25</td>
+      <td class="tag">&lt;datalist&gt;</td>
+      <td>Lista de opciones predefinidas para un &lt;input&gt;</td>
+      <td><code>&lt;input list="browsers"&gt;&lt;datalist id="browsers"&gt;&lt;option&gt;Chrome&lt;/option&gt;...&lt;/datalist&gt;</code></td>
+      <td>Funciona como sugerencias/autocompletado</td>
+    </tr>
+
+    <tr>
+      <td class="num">26</td>
+      <td class="tag">&lt;dd&gt;</td>
+      <td>Describe un término en una lista de descripción</td>
+      <td><code>&lt;dd&gt;Descripción del término&lt;/dd&gt;</code></td>
+      <td>Se usa junto con &lt;dt&gt; dentro de &lt;dl&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">27</td>
+      <td class="tag">&lt;del&gt;</td>
+      <td>Texto que ha sido eliminado de un documento</td>
+      <td><code>&lt;del datetime="2025-12-01"&gt;Precio viejo&lt;/del&gt;</code></td>
+      <td>Suele mostrarse tachado. Atributos cite y datetime opcionales</td>
+    </tr>
+
+    <tr>
+      <td class="num">28</td>
+      <td class="tag">&lt;details&gt;</td>
+      <td>Crea un widget de divulgación (expandir/colapsar)</td>
+      <td><code>&lt;details&gt;&lt;summary&gt;¿Pregunta?&lt;/summary&gt;Respuesta...&lt;/details&gt;</code></td>
+      <td>El atributo open lo muestra expandido por defecto</td>
+    </tr>
+
+    <tr>
+      <td class="num">29</td>
+      <td class="tag">&lt;dfn&gt;</td>
+      <td>Especifica un término que se está definiendo</td>
+      <td><code>&lt;dfn&gt;Responsive Design&lt;/dfn&gt; es...</code></td>
+      <td>Mejora semántica y accesibilidad</td>
+    </tr>
+
+    <tr>
+      <td class="num">30</td>
+      <td class="tag">&lt;dialog&gt;</td>
+      <td>Representa un cuadro de diálogo o modal</td>
+      <td><code>&lt;dialog open&gt;&lt;p&gt;¡Bienvenido!&lt;/p&gt;&lt;/dialog&gt;</code></td>
+      <td>Controlado con .showModal() y .close() en JS</td>
+    </tr>
+
+    <tr>
+      <td class="num">31</td>
+      <td class="tag">&lt;div&gt;</td>
+      <td>Contenedor genérico de bloque (sin significado semántico)</td>
+      <td><code>&lt;div class="card"&gt;...&lt;/div&gt;</code></td>
+      <td>Base de casi todo layout con CSS</td>
+    </tr>
+
+    <tr>
+      <td class="num">32</td>
+      <td class="tag">&lt;dl&gt;</td>
+      <td>Lista de descripción (términos + definiciones)</td>
+      <td><code>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Lenguaje de marcado&lt;/dd&gt;&lt;/dl&gt;</code></td>
+      <td>Semántica para pares clave-valor</td>
+    </tr>
+
+    <tr>
+      <td class="num">33</td>
+      <td class="tag">&lt;dt&gt;</td>
+      <td>Define un término en una lista de descripción</td>
+      <td><code>&lt;dt&gt;Término&lt;/dt&gt;</code></td>
+      <td>Puede haber varios &lt;dt&gt; por cada &lt;dd&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">34</td>
+      <td class="tag">&lt;em&gt;</td>
+      <td>Texto enfatizado (con importancia semántica)</td>
+      <td><code>Esto es &lt;em&gt;muy&lt;/em&gt; importante</code></td>
+      <td>Por defecto cursiva. Preferir sobre &lt;i&gt; cuando hay énfasis</td>
+    </tr>
+
+    <tr>
+      <td class="num">35</td>
+      <td class="tag">&lt;embed&gt;</td>
+      <td>Inserta contenido externo (generalmente plugins)</td>
+      <td><code>&lt;embed src="mapa.svg" type="image/svg+xml"&gt;</code></td>
+      <td>Menos usado hoy en día (mejor &lt;object&gt; o &lt;iframe&gt;)</td>
+    </tr>
+
+    <tr>
+      <td class="num">36</td>
+      <td class="tag">&lt;fieldset&gt;</td>
+      <td>Agrupa controles relacionados dentro de un formulario</td>
+      <td><code>&lt;fieldset&gt;&lt;legend&gt;Datos personales&lt;/legend&gt;...&lt;/fieldset&gt;</code></td>
+      <td>Mejora accesibilidad con &lt;legend&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">37</td>
+      <td class="tag">&lt;figcaption&gt;</td>
+      <td>Leyenda o descripción de un &lt;figure&gt;</td>
+      <td><code>&lt;figcaption&gt;Figura 1 - Diagrama&lt;/figcaption&gt;</code></td>
+      <td>Debe estar dentro de &lt;figure&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">38</td>
+      <td class="tag">&lt;figure&gt;</td>
+      <td>Agrupa contenido autocontenido (imágenes, diagramas, código...)</td>
+      <td><code>&lt;figure&gt;&lt;img src="..."&gt;&lt;figcaption&gt;...&lt;/figcaption&gt;&lt;/figure&gt;</code></td>
+      <td>Elemento semántico HTML5</td>
+    </tr>
+
+    <tr>
+      <td class="num">39</td>
+      <td class="tag">&lt;footer&gt;</td>
+      <td>Contiene pie de página o pie de sección</td>
+      <td><code>&lt;footer&gt;© 2026 Mi Empresa&lt;/footer&gt;</code></td>
+      <td>Puede estar dentro de &lt;article&gt;, &lt;section&gt;, etc.</td>
+    </tr>
+
+    <tr>
+      <td class="num">40</td>
+      <td class="tag">&lt;form&gt;</td>
+      <td>Define un formulario para enviar datos</td>
+      <td><code>&lt;form action="/login" method="post"&gt;...&lt;/form&gt;</code></td>
+      <td>Atributos clave: action, method, enctype</td>
+    </tr>
+
+    <tr>
+      <td class="num">41</td>
+      <td class="tag">&lt;h1&gt; – &lt;h6&gt;</td>
+      <td>Encabezados de diferentes niveles de importancia</td>
+      <td><code>&lt;h1&gt;Título principal&lt;/h1&gt; &lt;h2&gt;Subtítulo&lt;/h2&gt;</code></td>
+      <td>&lt;h1&gt; es el más importante. Usar jerarquía lógica</td>
+    </tr>
+
+    <tr>
+      <td class="num">42</td>
+      <td class="tag">&lt;head&gt;</td>
+      <td>Contiene metadatos, título, enlaces a CSS/JS, etc.</td>
+      <td><code>&lt;head&gt;&lt;title&gt;Página&lt;/title&gt;&lt;/head&gt;</code></td>
+      <td>No visible directamente en la página</td>
+    </tr>
+
+    <tr>
+      <td class="num">43</td>
+      <td class="tag">&lt;header&gt;</td>
+      <td>Encabezado introductorio de página o sección</td>
+      <td><code>&lt;header&gt;&lt;h1&gt;Sitio Web&lt;/h1&gt;&lt;nav&gt;...&lt;/nav&gt;&lt;/header&gt;</code></td>
+      <td>Semántico HTML5</td>
+    </tr>
+
+    <tr>
+      <td class="num">44</td>
+      <td class="tag">&lt;hr&gt;</td>
+      <td>Línea temática / separador de contenido</td>
+      <td><code>&lt;hr&gt;</code></td>
+      <td>Ahora tiene significado semántico (cambio de tema)</td>
+    </tr>
+
+    <tr>
+      <td class="num">45</td>
+      <td class="tag">&lt;html&gt;</td>
+      <td>Elemento raíz de todo el documento HTML</td>
+      <td><code>&lt;html lang="es"&gt;...&lt;/html&gt;</code></td>
+      <td>Atributo lang es muy recomendado</td>
+    </tr>
+
+    <tr>
+      <td class="num">46</td>
+      <td class="tag">&lt;i&gt;</td>
+      <td>Texto en cursiva (sin énfasis semántico)</td>
+      <td><code>&lt;i&gt;Nombre en latín&lt;/i&gt;</code></td>
+      <td>Usar &lt;em&gt; cuando haya énfasis</td>
+    </tr>
+
+    <tr>
+      <td class="num">47</td>
+      <td class="tag">&lt;iframe&gt;</td>
+      <td>Inserta otra página HTML dentro de la actual</td>
+      <td><code>&lt;iframe src="https://ejemplo.com" title="Mapa"&gt;&lt;/iframe&gt;</code></td>
+      <td>title obligatorio por accesibilidad</td>
+    </tr>
+
+    <tr>
+      <td class="num">48</td>
+      <td class="tag">&lt;img&gt;</td>
+      <td>Inserta una imagen</td>
+      <td><code>&lt;img src="foto.jpg" alt="Descripción" loading="lazy"&gt;</code></td>
+      <td>alt es obligatorio. loading="lazy" recomendado</td>
+    </tr>
+
+    <tr>
+      <td class="num">49</td>
+      <td class="tag">&lt;input&gt;</td>
+      <td>Campo de entrada en formulario</td>
+      <td><code>&lt;input type="email" name="correo" required&gt;</code></td>
+      <td>Muchos tipos: text, password, checkbox, radio, date, file, etc.</td>
+    </tr>
+
+    <tr>
+      <td class="num">50</td>
+      <td class="tag">&lt;ins&gt;</td>
+      <td>Texto que ha sido insertado</td>
+      <td><code>&lt;ins datetime="2025-11-15"&gt;Nuevo precio&lt;/ins&gt;</code></td>
+      <td>Suele mostrarse subrayado</td>
+    </tr>
+
+    <tr>
+      <td class="num">51</td>
+      <td class="tag">&lt;kbd&gt;</td>
+      <td>Representa entrada de teclado</td>
+      <td><code>Pulsa &lt;kbd&gt;Ctrl + C&lt;/kbd&gt; para copiar</code></td>
+      <td>Estilo monospace por defecto</td>
+    </tr>
+
+    <tr>
+      <td class="num">52</td>
+      <td class="tag">&lt;label&gt;</td>
+      <td>Etiqueta descriptiva para un control de formulario</td>
+      <td><code>&lt;label for="nombre"&gt;Nombre:&lt;/label&gt; &lt;input id="nombre"&gt;</code></td>
+      <td>Mejora accesibilidad y área de clic</td>
+    </tr>
+
+    <tr>
+      <td class="num">53</td>
+      <td class="tag">&lt;legend&gt;</td>
+      <td>Título de un &lt;fieldset&gt;</td>
+      <td><code>&lt;legend&gt;Información de contacto&lt;/legend&gt;</code></td>
+      <td>Debe ser el primer hijo de &lt;fieldset&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">54</td>
+      <td class="tag">&lt;li&gt;</td>
+      <td>Elemento de una lista</td>
+      <td><code>&lt;li&gt;Primer ítem&lt;/li&gt;</code></td>
+      <td>Dentro de &lt;ul&gt;, &lt;ol&gt; o &lt;menu&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">55</td>
+      <td class="tag">&lt;link&gt;</td>
+      <td>Relaciona el documento con un recurso externo</td>
+      <td><code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code></td>
+      <td>Usos comunes: CSS, favicon, canonical, preload...</td>
+    </tr>
+
+    <tr>
+      <td class="num">56</td>
+      <td class="tag">&lt;main&gt;</td>
+      <td>Contenido principal y único de la página</td>
+      <td><code>&lt;main&gt;...contenido central...&lt;/main&gt;</code></td>
+      <td>Solo debe haber uno visible por página</td>
+    </tr>
+
+    <tr>
+      <td class="num">57</td>
+      <td class="tag">&lt;map&gt;</td>
+      <td>Define un mapa de imagen con áreas clicables</td>
+      <td><code>&lt;map name="planeta"&gt;&lt;area ...&gt;&lt;/map&gt;</code></td>
+      <td>Se asocia con &lt;img usemap="#planeta"&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">58</td>
+      <td class="tag">&lt;mark&gt;</td>
+      <td>Texto resaltado (por relevancia)</td>
+      <td><code>Resultado de búsqueda: &lt;mark&gt;HTML&lt;/mark&gt;</code></td>
+      <td>Por defecto fondo amarillo</td>
+    </tr>
+
+    <tr>
+      <td class="num">59</td>
+      <td class="tag">&lt;menu&gt;</td>
+      <td>Lista de comandos o acciones</td>
+      <td><code>&lt;menu&gt;&lt;li&gt;&lt;button&gt;Guardar&lt;/button&gt;&lt;/li&gt;&lt;/menu&gt;</code></td>
+      <td>Soporte limitado en algunos navegadores</td>
+    </tr>
+
+    <tr>
+      <td class="num">60</td>
+      <td class="tag">&lt;meta&gt;</td>
+      <td>Proporciona metadatos sobre la página</td>
+      <td><code>&lt;meta name="description" content="..."&gt;</code></td>
+      <td>charset, viewport, author, robots, etc.</td>
+    </tr>
+
+    <tr>
+      <td class="num">61</td>
+      <td class="tag">&lt;meter&gt;</td>
+      <td>Representa una medición escalar (gauge)</td>
+      <td><code>&lt;meter value="75" min="0" max="100"&gt;75%&lt;/meter&gt;</code></td>
+      <td>Atributos: value, min, max, low, high, optimum</td>
+    </tr>
+
+    <tr>
+      <td class="num">62</td>
+      <td class="tag">&lt;nav&gt;</td>
+      <td>Bloque de navegación principal</td>
+      <td><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;...&lt;/ul&gt;&lt;/nav&gt;</code></td>
+      <td>Semántico HTML5</td>
+    </tr>
+
+    <tr>
+      <td class="num">63</td>
+      <td class="tag">&lt;noscript&gt;</td>
+      <td>Contenido alternativo cuando JavaScript está desactivado</td>
+      <td><code>&lt;noscript&gt;Por favor activa JavaScript&lt;/noscript&gt;</code></td>
+      <td>Puede ir en &lt;head&gt; o &lt;body&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">64</td>
+      <td class="tag">&lt;object&gt;</td>
+      <td>Inserta objeto externo (PDF, SVG, applet...)</td>
+      <td><code>&lt;object data="documento.pdf" type="application/pdf"&gt;&lt;/object&gt;</code></td>
+      <td>Proporciona fallback dentro del elemento</td>
+    </tr>
+
+    <tr>
+      <td class="num">65</td>
+      <td class="tag">&lt;ol&gt;</td>
+      <td>Lista ordenada (numerada)</td>
+      <td><code>&lt;ol start="5" reversed&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ol&gt;</code></td>
+      <td>Atributos: start, reversed, type</td>
+    </tr>
+
+    <tr>
+      <td class="num">66</td>
+      <td class="tag">&lt;optgroup&gt;</td>
+      <td>Agrupa opciones dentro de un &lt;select&gt;</td>
+      <td><code>&lt;optgroup label="Europa"&gt;&lt;option&gt;España&lt;/option&gt;...&lt;/optgroup&gt;</code></td>
+      <td>label es obligatorio</td>
+    </tr>
+
+    <tr>
+      <td class="num">67</td>
+      <td class="tag">&lt;option&gt;</td>
+      <td>Opción dentro de &lt;select&gt; o &lt;datalist&gt;</td>
+      <td><code>&lt;option value="es"&gt;Español&lt;/option&gt;</code></td>
+      <td>Atributos: value, selected, disabled</td>
+    </tr>
+
+    <tr>
+      <td class="num">68</td>
+      <td class="tag">&lt;output&gt;</td>
+      <td>Resultado de un cálculo o acción de formulario</td>
+      <td><code>&lt;output name="total" for="a b"&gt;0&lt;/output&gt;</code></td>
+      <td>Atributos for y form útiles</td>
+    </tr>
+
+    <tr>
+      <td class="num">69</td>
+      <td class="tag">&lt;p&gt;</td>
+      <td>Párrafo de texto</td>
+      <td><code>&lt;p&gt;Este es un párrafo normal.&lt;/p&gt;</code></td>
+      <td>Elemento de bloque básico</td>
+    </tr>
+
+    <tr>
+      <td class="num">70</td>
+      <td class="tag">&lt;picture&gt;</td>
+      <td>Contenedor para imágenes responsivas con múltiples fuentes</td>
+      <td><code>&lt;picture&gt;&lt;source media="(min-width:800px)" srcset="grande.jpg"&gt;&lt;img src="default.jpg"&gt;&lt;/picture&gt;</code></td>
+      <td>Ideal para art direction y formatos modernos</td>
+    </tr>
+
+    <tr>
+      <td class="num">71</td>
+      <td class="tag">&lt;pre&gt;</td>
+      <td>Texto preformateado (preserva espacios y saltos)</td>
+      <td><code>&lt;pre&gt;  Texto
+   con   formato&lt;/pre&gt;</code></td>
+      <td>Suele usarse con &lt;code&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">72</td>
+      <td class="tag">&lt;progress&gt;</td>
+      <td>Barra de progreso</td>
+      <td><code>&lt;progress value="45" max="100"&gt;45%&lt;/progress&gt;</code></td>
+      <td>value y max son los principales atributos</td>
+    </tr>
+
+    <tr>
+      <td class="num">73</td>
+      <td class="tag">&lt;q&gt;</td>
+      <td>Cita corta en línea (agrega comillas automáticas)</td>
+      <td><code>&lt;q&gt;La vida es bella&lt;/q&gt;</code></td>
+      <td>cite opcional</td>
+    </tr>
+
+    <tr>
+      <td class="num">74</td>
+      <td class="tag">&lt;rp&gt;</td>
+      <td>Paréntesis de fallback para anotaciones ruby</td>
+      <td><code>&lt;rp&gt;(&lt;/rp&gt;</code></td>
+      <td>Se usa con &lt;ruby&gt; y &lt;rt&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">75</td>
+      <td class="tag">&lt;rt&gt;</td>
+      <td>Anotación de pronunciación (principalmente asiático)</td>
+      <td><code>&lt;rt&gt;kan&lt;/rt&gt;</code></td>
+      <td>Dentro de &lt;ruby&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">76</td>
+      <td class="tag">&lt;ruby&gt;</td>
+      <td>Anotaciones ruby (usado en japonés, chino...)</td>
+      <td><code>&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;字&lt;rt&gt;ji&lt;/rt&gt;&lt;/ruby&gt;</code></td>
+      <td>Combina carácter + pronunciación</td>
+    </tr>
+
+    <tr>
+      <td class="num">77</td>
+      <td class="tag">&lt;s&gt;</td>
+      <td>Texto que ya no es correcto/relevante</td>
+      <td><code>&lt;s&gt;Precio: $100&lt;/s&gt; Ahora $80</code></td>
+      <td>Diferente de &lt;del&gt; (semántica distinta)</td>
+    </tr>
+
+    <tr>
+      <td class="num">78</td>
+      <td class="tag">&lt;samp&gt;</td>
+      <td>Muestra salida de un programa o sistema</td>
+      <td><code>&lt;samp&gt;Error 404: Not Found&lt;/samp&gt;</code></td>
+      <td>Estilo monospace por defecto</td>
+    </tr>
+
+    <tr>
+      <td class="num">79</td>
+      <td class="tag">&lt;script&gt;</td>
+      <td>Inserta código JavaScript</td>
+      <td><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></td>
+      <td>async, defer, type="module" son muy usados</td>
+    </tr>
+
+    <tr>
+      <td class="num">80</td>
+      <td class="tag">&lt;section&gt;</td>
+      <td>Sección temática genérica</td>
+      <td><code>&lt;section&gt;&lt;h2&gt;Capítulo 1&lt;/h2&gt;...&lt;/section&gt;</code></td>
+      <td>Debe tener encabezado para semántica</td>
+    </tr>
+
+    <tr>
+      <td class="num">81</td>
+      <td class="tag">&lt;select&gt;</td>
+      <td>Lista desplegable / menú de selección</td>
+      <td><code>&lt;select name="pais"&gt;&lt;option&gt;España&lt;/option&gt;...&lt;/select&gt;</code></td>
+      <td>Atributos: multiple, size, required</td>
+    </tr>
+
+    <tr>
+      <td class="num">82</td>
+      <td class="tag">&lt;small&gt;</td>
+      <td>Texto de letra pequeña (fine print, descargos, copyright...)</td>
+      <td><code>&lt;small&gt;© 2026 Todos los derechos reservados&lt;/small&gt;</code></td>
+      <td>Semántico en HTML5</td>
+    </tr>
+
+    <tr>
+      <td class="num">83</td>
+      <td class="tag">&lt;source&gt;</td>
+      <td>Define fuente multimedia para &lt;audio&gt;, &lt;video&gt; o &lt;picture&gt;</td>
+      <td><code>&lt;source src="video.webm" type="video/webm"&gt;</code></td>
+      <td>Se usa con srcset, media, type...</td>
+    </tr>
+
+    <tr>
+      <td class="num">84</td>
+      <td class="tag">&lt;span&gt;</td>
+      <td>Contenedor genérico en línea</td>
+      <td><code>Precio: &lt;span class="precio"&gt;$49&lt;/span&gt;</code></td>
+      <td>Muy usado para aplicar estilos o JS</td>
+    </tr>
+
+    <tr>
+      <td class="num">85</td>
+      <td class="tag">&lt;strong&gt;</td>
+      <td>Texto de fuerte importancia</td>
+      <td><code>&lt;strong&gt;¡Atención!&lt;/strong&gt;</code></td>
+      <td>Por defecto negrita. Semántico (mejor que &lt;b&gt;)</td>
+    </tr>
+
+    <tr>
+      <td class="num">86</td>
+      <td class="tag">&lt;style&gt;</td>
+      <td>Define estilos CSS dentro del documento</td>
+      <td><code>&lt;style&gt;body { font-family: Arial; }&lt;/style&gt;</code></td>
+      <td>Normalmente dentro de &lt;head&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">87</td>
+      <td class="tag">&lt;sub&gt;</td>
+      <td>Subíndice</td>
+      <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+      <td>Usado en fórmulas químicas, matemáticas...</td>
+    </tr>
+
+    <tr>
+      <td class="num">88</td>
+      <td class="tag">&lt;summary&gt;</td>
+      <td>Título visible del elemento &lt;details&gt;</td>
+      <td><code>&lt;summary&gt;¿Cómo funciona?&lt;/summary&gt;</code></td>
+      <td>Obligatorio dentro de &lt;details&gt;</td>
+    </tr>
+
+    <tr>
+      <td class="num">89</td>
+      <td class="tag">&lt;sup&gt;</td>
+      <td>Superíndice</td>
+      <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code></td>
+      <td>Usado en exponentes matemáticos</td>
+    </tr>
+
+    <tr>
+      <td class="num">90</td>
+      <td class="tag">&lt;table&gt;</td>
+      <td>Define una tabla de datos</td>
+      <td><code>&lt;table&gt;&lt;tr&gt;&lt;th&gt;...&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+      <td>Usar &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt; cuando corresponda</td>
+    </tr>
+
+    <tr>
+      <td class="num">91</td>
+      <td class="tag">&lt;tbody&gt;</td>
+      <td>Agrupa el cuerpo principal de datos de la tabla</td>
+      <td><code>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</code></td>
+      <td>Mejora semántica y accesibilidad</td>
+    </tr>
+
+    <tr>
+      <td class="num">92</td>
+      <td class="tag">&lt;td&gt;</td>
+      <td>Celda de datos en una tabla</td>
+      <td><code>&lt;td colspan="2"&gt;Contenido&lt;/td&gt;</code></td>
+      <td>Atributos colspan y rowspan</td>
+    </tr>
+
+    <tr>
+      <td class="num">93</td>
+      <td class="tag">&lt;template&gt;</td>
+      <td>Contenedor de contenido inactivo (para clonar con JS)</td>
+      <td><code>&lt;template id="item"&gt;&lt;div&gt;Plantilla&lt;/div&gt;&lt;/template&gt;</code></td>
+      <td>No se renderiza hasta que se clona</td>
+    </tr>
+
+    <tr>
+      <td class="num">94</td>
+      <td class="tag">&lt;textarea&gt;</td>
+      <td>Campo de texto multilínea</td>
+      <td><code>&lt;textarea rows="5" cols="40" maxlength="500"&gt;&lt;/textarea&gt;</code></td>
+      <td>placeholder, required, spellcheck...</td>
+    </tr>
+
+    <tr>
+      <td class="num">95</td>
+      <td class="tag">&lt;tfoot&gt;</td>
+      <td>Agrupa el pie de la tabla (totales, resúmenes...)</td>
+      <td><code>&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</code></td>
+      <td>Suele repetirse al imprimir</td>
+    </tr>
+
+    <tr>
+      <td class="num">96</td>
+      <td class="tag">&lt;th&gt;</td>
+      <td>Celda de encabezado en tabla</td>
+      <td><code>&lt;th scope="col"&gt;Nombre&lt;/th&gt;</code></td>
+      <td>scope="row|col|rowgroup|colgroup" mejora accesibilidad</td>
+    </tr>
+
+    <tr>
+      <td class="num">97</td>
+      <td class="tag">&lt;thead&gt;</td>
+      <td>Agrupa los encabezados de la tabla</td>
+      <td><code>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;...&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</code></td>
+      <td>Se repite al imprimir páginas largas</td>
+    </tr>
+
+    <tr>
+      <td class="num">98</td>
+      <td class="tag">&lt;time&gt;</td>
+      <td>Representa fecha u hora (legible por máquinas)</td>
+      <td><code>&lt;time datetime="2026-02-25"&gt;25 de febrero de 2026&lt;/time&gt;</code></td>
+      <td>datetime es clave para SEO y accesibilidad</td>
+    </tr>
+
+    <tr>
+      <td class="num">99</td>
+      <td class="tag">&lt;title&gt;</td>
+      <td>Define el título de la página (pestaña del navegador)</td>
+      <td><code>&lt;title&gt;Mi página web&lt;/title&gt;</code></td>
+      <td>Obligatorio dentro de &lt;head&gt;</td>
+    </tr>
+
+        <tr>
+      <td class="num">100</td>
+      <td class="tag">&lt;tr&gt;</td>
+      <td>Define una fila en una tabla</td>
+      <td><code>&lt;tr&gt;&lt;td&gt;Celda 1&lt;/td&gt;&lt;td&gt;Celda 2&lt;/td&gt;&lt;/tr&gt;</code></td>
+      <td>Elemento contenedor de celdas (&lt;td&gt; o &lt;th&gt;). Se usa dentro de &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt; o        	&lt;tfoot&gt;.</td>
+    </tr>
+
+    <tr>
+      <td class="num">101</td>
+      <td class="tag">&lt;video&gt;</td>
+      <td>Reproductor de video</td>
+      <td><code>&lt;video controls poster="miniatura.jpg"&gt;&lt;source src="vid.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></td>
+      <td>poster, controls, autoplay, loop</td>
+    </tr>
+
+    <tr>
+      <td class="num">102</td>
+      <td class="tag">&lt;wbr&gt;</td>
+      <td>Posible salto de línea (word break opportunity)</td>
+      <td><code>supercalifragilistic&lt;wbr&gt;expialidocious&lt;/wbr&gt;</code></td>
+      <td>Útil en palabras muy largas sin espacios</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p style="text-align:center; margin-top:40px;">
+  Lista de 102 etiquetas HTML.<br>
+  © 2026 - Nelson Arjuna Mendoza 100643232 • Semestre 2026-10
+</p>
+
+</body>
+</html>
